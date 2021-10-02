@@ -1,2 +1,932 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1, user-scalable=0">
+<meta name="keywords" content="exploit, exploits, hack, hacks, cheats, developers, social, media, best, library, source, wearedevs" />
+<meta name="description" content="Best website for Roblox exploits, a developers community, and more from WeAreDevs." />
+<title>Roblox Exploits & Hacks & Cheats - WeAreDevs</title>
+<script src="/cdn-cgi/apps/head/DYI6kXcOcxKbTp9LDOkriR11YHo.js"></script><link rel="shortcut icon" href="/favicon.ico" />
+<link href="/css/main.css" rel="stylesheet" type="text/css">
+<link href="/css/themes/bright.css" rel="stylesheet" type="text/css" id="themecss">
+<link href="/css/navheader.css" rel="stylesheet" type="text/css">
+<script>
+    function getCookie(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for(var i = 0; i <ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function setCookie(name,value,days) {
+		var expires = "";
+		if (days) {
+			var date = new Date();
+			date.setTime(date.getTime() + (days*24*60*60*1000));
+			expires = "; expires=" + date.toUTCString();
+		}
+		document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+	}
+
+    //Sets the corresponding theme
+    if(getCookie("wrdtheme")=="night"){ document.getElementById('themecss').href = '/css/themes/night.css'; }
+
+    //Removes the stupid cloudflare parameters
+    history.replaceState && history.replaceState(
+  null, '', location.pathname + location.search.replace(/[\?&](__cf_chl_jschl_tk__|__cf_chl_captcha_tk__)=[^&]+/, '').replace(/^&/, '?') + location.hash
+);
+</script>
+<link href="/css/releases.css" rel="stylesheet" type="text/css">
+</head>
+<body class="container">
+<header id="navigationbar">
+<span class="menu-toggle"></span>
+<a id="foologo" href="/home" title="WeAreDevs"><p>WeAreDevs</p></a>
+<ul class="navItems">
+<li class='navItem'>
+<a href="/home" title="Featured releases page">Home</a>
+</li>
+<li class='navItem'>
+<a href="/exploits" title="Featured releases page">Exploits</a>
+</li>
+<li class='navItem'>
+<a href="/scripts" title="Featured scripts page">Scripts</a>
+</li>
+<li class='navItem'>
+<a title="Speak with the community" href="/forum">Forum</a>
+</li>
+<li class='navItem'><a title="WeAreDevs Blog" href="https://blog.wearedevs.com">Blog</a></li>
+<li class='navItem'>
+<a title="Discord Server" href="/discord">Discord</a>
+</li>
+<script type="text/javascript" src="/js/timestamp.js"></script>
+<li class='navItem navHeader_dropmenu navbell'>
+<span class="dropmenu-title notifbell" title="Notifications"><span class="notifcount">4</span></span>
+<div class="menu">
+<p class="deleteallnotifs" onclick="DeleteAllNotifs(this)">Delete All</p>
+<div class="notifications">
+<div class="notification" data-id="60b7bc689a5125258b4bb90c">
+<img src="https://cdn.wearedevs.net/images/avatars/59853_1629068798062.gif">
+<div>
+<a href="/forum/t/20951">Moon has mentioned you in a thread reply.</a>
+<p class="notif-time"><script>document.write(TimeStamp.Beautify('Wed Jun 02 2021 17:14:16 GMT+0000 (Coordinated Universal Time)'))</script></p>
+</div>
+<p class="notif-exit">x</p>
+</div>
+<div class="notification" data-id="60b43cdfc2179f49537343e6">
+<img src="https://cdn.wearedevs.net/images/avatars/17308_1566322730257.png">
+<div>
+<a href="/profile/reputation">Funtimesgetfunner has modified your reputation.</a>
+<p class="notif-time"><script>document.write(TimeStamp.Beautify('Mon May 31 2021 01:33:19 GMT+0000 (Coordinated Universal Time)'))</script></p>
+</div>
+<p class="notif-exit">x</p>
+</div>
+<div class="notification" data-id="60b3f210c2179f495373437b">
+<img src="https://cdn.wearedevs.net/images/avatars/59853_1629068798062.gif">
+<div>
+<a href="/profile/reputation">Moon has modified your reputation.</a>
+<p class="notif-time"><script>document.write(TimeStamp.Beautify('Sun May 30 2021 20:14:08 GMT+0000 (Coordinated Universal Time)'))</script></p>
+</div>
+<p class="notif-exit">x</p>
+</div>
+<div class="notification" data-id="602d0d5d398bfe652b659db4">
+<img src="https://cdn.wearedevs.net/images/avatars/63518_1613884470522.jpeg">
+<div>
+<a href="/profile/reputation">Xen80 has modified your reputation.</a>
+<p class="notif-time"><script>document.write(TimeStamp.Beautify('Wed Feb 17 2021 12:34:37 GMT+0000 (Coordinated Universal Time)'))</script></p>
+</div>
+<p class="notif-exit">x</p>
+</div>
+</div>
+</div>
+</li>
+<li class='navItem navHeader_dropmenu'>
+<p class="dropmenu-title" title="Account options">SpeedSterDevs</p>
+<div class="menu">
+<a href='/profile'>Profile</a>
+<a href='/manager/info' title="Manage your account">Manager</a>
+<p class="dropMenu_option" onclick="logout()">Logout
+</p>
+</div>
+</li>
+
+</ul>
+<script>
+        //Used to send logout request to API
+		function logout(){
+            fetch('https://api.wearedevs.net/v1/account/logout', {
+                method: "POST",
+                credentials: 'include',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+            .then(res => res.json())
+            .then(res => {
+                if(res.success) window.location.reload()
+                else {
+                    if(res.reason) alert("Error: " + res.reason)
+                    else alert("An unexpected error occured...")
+                }
+            })
+            .catch(()=>alert("Failed to contact the server or an unexpected response was received..."))
+        }
+
+        function DeleteNotifications(id){
+            return fetch('https://api.wearedevs.net/v1/notifications', {
+                method: "DELETE",
+                credentials: 'include',
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    id
+                })
+            })
+        }
+        
+        function DeleteAllNotifs(el){
+            //The server will default to delete everything because there is no specified id
+            DeleteNotifications()
+            .then(res => res.json())
+            .then(res => {
+                if(res.success) {
+                    document.getElementsByClassName("notifications")[0].innerHTML = "<p>No notifications...</p>"
+                    document.getElementsByClassName("notifcount")[0].style.display = "none"
+                    el.style.display = "none"
+                }
+                //There should never be an error response
+                else alert("Failed to delete notification. Please contact an admin!")
+            })
+            .catch(e => alert("Failed to contact server"))
+        }
+
+        // Listen to all clicks on the document
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('notif-exit')){
+                var parent = event.target.parentElement
+                var id = parent.getAttribute("data-id")
+
+                DeleteNotifications(id)
+                .then(res => res.json())
+                .then(res => {
+                    if(res.success === true){
+                        var numNotifs = parent.parentElement.childElementCount
+                        document.getElementsByClassName("notifcount")[0].innerHTML = numNotifs - 1
+                        if(numNotifs <= 1){
+                            parent.parentElement.innerHTML = "No notifications"
+                            document.getElementsByClassName("notifcount")[0].remove()
+                            document.getElementsByClassName("deleteallnotifs")[0].remove()
+                        }
+                        parent.remove()
+                    }
+                    //Unless the request was crafted, there should never be an error response
+                    else alert("Failed to delete notification. Please contact an admin!")
+                })
+                .catch(e => alert("Failed to contact server"))
+            }
+            //Navigation options display toggle (Mobile view)
+            else if(event.target.classList.contains('menu-toggle')){
+                if(document.getElementsByClassName("navItems")[0].style.display !== "flex"){
+                    document.getElementsByClassName("navItems")[0].style.display = "flex"
+                }
+                else document.getElementsByClassName("navItems")[0].style.display = "none"
+            }
+            //Drop-menu toggle
+            else if(event.target.classList.contains('dropmenu-title')){
+                if(event.target.parentElement.getElementsByClassName("menu")[0].style.display !== "block"){
+                    event.target.parentElement.getElementsByClassName("menu")[0].style.display = "block"
+                }
+                else event.target.parentElement.getElementsByClassName("menu")[0].style.display = "none"
+
+                event.target.parentElement.onmouseleave = () => event.target.parentElement.getElementsByClassName("menu")[0].style.display = "none"
+            } 
+        })
+    </script>
+</header>
+<style>
+.smedias{
+	position: fixed;
+	bottom: 12px;
+	right: 12px;
+    z-index: 1;
+}
+
+.smedias .smedia{
+	width: 25px;
+    height: 25px;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+    border-radius: 3px;
+}
+
+.smedias .youtube{
+	background-image: url(https://cdn.wearedevs.net/images/icons/youtube.png);
+}
+
+.smedias .twitter{
+	background-image: url(https://cdn.wearedevs.net/images/icons/twitter.png);
+    background-size: 20px;
+    background-color: #55acee;
+    margin-bottom: 3px;
+}
+
+.smedias .discord{
+	background-image: url(https://cdn.wearedevs.net/images/icons/discord-head-white.png);
+    background-color: #7289da;
+    background-size: 20px;
+}
+</style>
+<div class="smedias">
+<a href="https://youtube.com/WeAreDevsYT" target="_blank" class="smedia youtube" alt="YouTube"></a>
+<a href="https://twitter.com/_wearedevs" target="_blank" class="smedia twitter" alt="Twitter"></a>
+<a href="/discord" target="_blank" class="smedia discord" alt="Discord"></a>
+</div>
+<main>
+<div>
+<div class="boxad" style="display:flex; flex-direction:column;">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="width:300px;height:250px;display: block;" data-ad-client="ca-pub-9142841210062390" data-ad-slot="3739798263"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<br>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="width:300px;height:250px;display: block;" data-ad-client="ca-pub-9142841210062390" data-ad-slot="3739798263"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="releases-header">
 <h1>Unpatchable & Undetectable Exploits</h1>
 <p>To the extent of typical game engine updates</p>
+</div>
+<center>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/multiplerbx.png" alt="Multiple RBX Games" title="Multiple RBX Games">
+<h2 class="downloadTitle">Multiple RBX Games</h2>
+</div>
+<p class="description">Usually, you are limited to having only one game open. With this, you can open as many games as you want. 100 games if you felt like.</p>
+</div>
+<div class="download_metadata">
+<p>6.9m+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Multiple RBX Games" title="Learn more about Multiple RBX Games">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Multiple RBX Games" title="Download Multiple RBX Games">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/esp.jpg" alt="ESP" title="ESP">
+<h2 class="downloadTitle">ESP</h2>
+</div>
+<p class="description">This lets you see all players through any other object. Noted to be unpatchable and undetectable.</p>
+</div>
+<div class="download_metadata">
+<p>1.3m+ downloads</p>
+<a class="round release-card-button" href="/d/ESP" title="Download ESP">
+<p>Download</p>
+</a>
+</div>
+</div>
+</center>
+</div>
+<div>
+<div class="releases-header">
+<h1>All Exploits</h1>
+<p>Roblox exploits for games</p>
+</div>
+<center>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/JJSploit-v5.jpeg" alt="JJSploit" title="JJSploit">
+<h2 class="downloadTitle">JJSploit</h2>
+</div>
+<p class="description">Lua executor, click teleport, ESP, speed, fly, infinite jump, aimbot, keyless, and so much more. A powerful all in one package.</p>
+</div>
+<div class="download_metadata">
+<p>24.6m+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/JJSploit" title="Learn more about JJSploit">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/JJSploit" title="Download JJSploit">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/krnl.jpeg" alt="Krnl" title="Krnl">
+<h2 class="downloadTitle">Krnl</h2>
+</div>
+<p class="description">WORKING SEPT 29TH 24 HOUR KEYS, GETCONNECTIONS, DECOMPILER, GETHIDDENPROPERTY, SETHIDDENPROPERTY, FULL DEBUG LIBRARY</p>
+</div>
+<div class="download_metadata">
+<p>10.7m+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Krnl" title="Learn more about Krnl">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Krnl" title="Download Krnl">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/skisploit.jpeg" alt="Skisploit" title="Skisploit">
+<h2 class="downloadTitle">Skisploit</h2>
+</div>
+<p class="description">Easy 15 second keys auto save! Always Working! MAJOR NEW improvements! No crashes! Level 8 exploit can now run whatever, FULL DEBUG LIB!</p>
+</div>
+<div class="download_metadata">
+<p>2.8m+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Skisploit" title="Learn more about Skisploit">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Skisploit" title="Download Skisploit">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/oxygenu-112520.jpeg" alt="Oxygen U" title="Oxygen U">
+<h2 class="downloadTitle">Oxygen U</h2>
+</div>
+<p class="description">WORKING SEP 29TH 24 HOUR KEYS, Bytecode Transpiler, Full debug lib, Hookfunction, getconnections, No crashes! OWL HUB supported!</p>
+</div>
+<div class="download_metadata">
+<p>501.8k+ downloads</p>
+<a class="round release-card-button" href="/d/Oxygen U" title="Download Oxygen U">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/fluxus-7292021.jpeg" alt="Fluxus" title="Fluxus">
+<h2 class="downloadTitle">Fluxus</h2>
+</div>
+<p class="description">NEW V7 Fluxus is the top RVM labelled exploit providing a better experience than most top paid exploits! WORKING, 24H KEYS, GETCONNECTIONS!</p>
+</div>
+<div class="download_metadata">
+<p>374.9k+ downloads</p>
+<a class="round release-card-button" href="/d/Fluxus" title="Download Fluxus">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/kiwix-9621.jpeg" alt="Kiwi X" title="Kiwi X">
+<h2 class="downloadTitle">Kiwi X</h2>
+</div>
+<p class="description">ANTI CHEAT BYPASS! Fix Unexpected Client Behavior Kicks, One Time Key, HUGE Game Hub, Many Functions, User Friendly and much more!</p>
+</div>
+<div class="download_metadata">
+<p>537.9k+ downloads</p>
+<a class="round release-card-button" href="/d/Kiwi X" title="Download Kiwi X">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/dansploit-100221.jpeg" alt="Dansploit" title="Dansploit">
+<h2 class="downloadTitle">Dansploit</h2>
+</div>
+<p class="description">UNPATCHED 29 SEPT, LEVEL 8, We also have 615 games you can choose from and a Script library of 190 scripts, Lifetime Keys Feature</p>
+</div>
+<div class="download_metadata">
+<p>799.2k+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Dansploit" title="Learn more about Dansploit">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Dansploit" title="Download Dansploit">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/coco-z4-13021.jpeg" alt="Coco Z" title="Coco Z">
+<h2 class="downloadTitle">Coco Z</h2>
+</div>
+<p class="description">Coco Is Back! With An Excellent UI And 3 Day Keys, Your Sure To Have Fun Playing Your Favourite Games While Using Coco.</p>
+</div>
+<div class="download_metadata">
+<p>887k+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Coco Z" title="Learn more about Coco Z">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Coco Z" title="Download Coco Z">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/nihon-82221.jpeg" alt="Nihon" title="Nihon">
+<h2 class="downloadTitle">Nihon</h2>
+</div>
+<p class="description">Working September, High Quality Executor, A Lot Of Features And So Much More! Now Has Better Script Support For Many Of Your Favorite Games.</p>
+</div>
+<div class="download_metadata">
+<p>57.3k+ downloads</p>
+<a class="round release-card-button" href="/d/Nihon" title="Download Nihon">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/comet-91221.jpeg" alt="Comet" title="Comet">
+<h2 class="downloadTitle">Comet</h2>
+</div>
+<p class="description">WORKING SEP 30! Keyless, No Ads, FULL DEBUG LIBRARY, GETCONNECTIONS, REMOTE SPY, SETHIDDENPROPERTY, LVL 8</p>
+</div>
+<div class="download_metadata">
+<p>16.3k+ downloads</p>
+<a class="round release-card-button" href="/d/Comet" title="Download Comet">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/infinitejump.png" alt="Infinite Jump" title="Infinite Jump">
+<h2 class="downloadTitle">Infinite Jump</h2>
+</div>
+<p class="description">Spam the spacebar to jump as high as you want.</p>
+</div>
+<div class="download_metadata">
+<p>3.8m+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Infinite Jump" title="Learn more about Infinite Jump">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Infinite Jump" title="Download Infinite Jump">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/fly.jpeg" alt="Fly" title="Fly">
+<h2 class="downloadTitle">Fly</h2>
+</div>
+<p class="description">Enables your character to fly all around the game. Yes, a real fly cheat. </p>
+</div>
+<div class="download_metadata">
+<p>546.6k+ downloads</p>
+<a class="round release-card-button" href="/d/Fly" title="Download Fly">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/gravityswitch.png" alt="Gravity Switch" title="Gravity Switch">
+<h2 class="downloadTitle">Gravity Switch</h2>
+</div>
+<p class="description">Jump infinitely high or walk off a surface to walk in the air.</p>
+</div>
+<div class="download_metadata">
+<p>1.1m+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Gravity Switch" title="Learn more about Gravity Switch">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Gravity Switch" title="Download Gravity Switch">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/noclip.jpg" alt="Noclip" title="Noclip">
+<h2 class="downloadTitle">Noclip</h2>
+</div>
+<p class="description">Achieve the control of walking through walls or not. Outdated design, but effective.</p>
+</div>
+<div class="download_metadata">
+<p>751.1k+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Noclip" title="Learn more about Noclip">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Noclip" title="Download Noclip">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/multiplerbx.png" alt="Multiple RBX Games" title="Multiple RBX Games">
+<h2 class="downloadTitle">Multiple RBX Games</h2>
+</div>
+<p class="description">Usually, you are limited to having only one game open. With this, you can open as many games as you want. 100 games if you felt like.</p>
+</div>
+<div class="download_metadata">
+<p>6.9m+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Multiple RBX Games" title="Learn more about Multiple RBX Games">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Multiple RBX Games" title="Download Multiple RBX Games">
+<p>Download</p>
+</a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/esp.jpg" alt="ESP" title="ESP">
+<h2 class="downloadTitle">ESP</h2>
+</div>
+<p class="description">This lets you see all players through any other object. Noted to be unpatchable and undetectable.</p>
+</div>
+<div class="download_metadata">
+<p>1.3m+ downloads</p>
+<a class="round release-card-button" href="/d/ESP" title="Download ESP">
+<p>Download</p>
+</a>
+</div>
+</div>
+</center>
+</div>
+<div>
+<div class="boxad">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<ins class="adsbygoogle" style="width:300px;height:250px;display: block;" data-ad-client="ca-pub-9142841210062390" data-ad-slot="3739798263"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+<div class="releases-header">
+<h1>Others</h1>
+<p>Tools to support cheats</p>
+</div>
+<center>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/DLL%20Injector.png" alt="DLL Injector" title="DLL Injector">
+<h2 class="downloadTitle">DLL Injector</h2>
+</div>
+<p class="description">Feature packed injector used to map DLL based cheats into games for both 64bit and 32bit</p>
+</div>
+<div class="round download_metadata">
+<p>792.3k+ downloads</p>
+<a class="round release-card-button" href="/d/DLL Injector" title="Download DLL Injector"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/cs.jpeg" alt="Exploit API CS" title="Exploit API CS">
+<h2 class="downloadTitle">Exploit API C#</h2>
+</div>
+<p class="description">An incredibly easy solution that lets novices and pros make powerful content. Used to make some of the most popular exploits.</p>
+</div>
+<div class="round download_metadata">
+<p>926.8k+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Exploit API CS" title="Learn more about Exploit API CS">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Exploit API CS" title="Download Exploit API CS"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/cpp.png" alt="Exploit API CPP" title="Exploit API CPP">
+<h2 class="downloadTitle">Exploit API C++</h2>
+</div>
+<p class="description">Same thing as the CS API, but for use in CPP projects.</p>
+</div>
+<div class="round download_metadata">
+<p>127.3k+ downloads</p>
+<a class="moreinfo-card-button" href="/dinfo/Exploit API CPP" title="Learn more about Exploit API CPP">
+<p>More Info</p>
+</a>
+<a class="round release-card-button" href="/d/Exploit API CPP" title="Download Exploit API CPP"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/winrar.png" alt="WinRar" title="WinRar">
+<h2 class="downloadTitle">WinRar</h2>
+</div>
+<p class="description">This is used to open archived files such as .rar and .zip files</p>
+</div>
+<div class="round download_metadata">
+<p>248.7k+ downloads</p>
+<a class="round release-card-button" href="/d/WinRar" title="Download WinRar"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/dllinjector.png" alt="Extreme Injector" title="Extreme Injector">
+<h2 class="downloadTitle">Extreme Injector</h2>
+</div>
+<p class="description">Typically used to inject dll based exploits into programs</p>
+</div>
+<div class="round download_metadata">
+<p>642k+ downloads</p>
+<a class="round release-card-button" href="/d/Extreme Injector" title="Download Extreme Injector"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/lagswitch.png" alt="Lagswitch" title="Lagswitch">
+<h2 class="downloadTitle">Lagswitch</h2>
+</div>
+<p class="description">This toggles your internet's connectivity. Typically in games, when you turn your internet off, you get a frozen time effect</p>
+</div>
+<div class="round download_metadata">
+<p>487.1k+ downloads</p>
+<a class="round release-card-button" href="/d/Lagswitch" title="Download Lagswitch"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/autoshutdown.png" alt="Shutdown Timer" title="Shutdown Timer">
+<h2 class="downloadTitle">Shutdown Timer</h2>
+</div>
+<p class="description">This shuts down your computer after a set amount of time. Useful for downloading gigabytes worth of games while your sleep</p>
+</div>
+<div class="round download_metadata">
+<p>76.6k+ downloads</p>
+<a class="round release-card-button" href="/d/Shutdown Timer" title="Download Shutdown Timer"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/cheatengine.png" alt="NOPDE Engine" title="NOPDE Engine">
+<h2 class="downloadTitle">NOPDE Engine</h2>
+</div>
+<p class="description">Most games have anti-cheat systems that block Cheat Engine. This is a version of Cheat Engine which often bypasses that check(Given you inputted the proper settings)</p>
+</div>
+<div class="round download_metadata">
+<p>372.2k+ downloads</p>
+<a class="round release-card-button" href="/d/NOPDE Engine" title="Download NOPDE Engine"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/notepad++.png" alt="Notepad" title="Notepad">
+<h2 class="downloadTitle">Notepad</h2>
+</div>
+<p class="description">Notepad++ is my favorite text editor for general use and coding purposes. Supports many of the modern day languages</p>
+</div>
+<div class="round download_metadata">
+<p>35.6k+ downloads</p>
+<a class="round release-card-button" href="/d/Notepad" title="Download Notepad"><p>Download</p></a>
+</div>
+</div>
+<div class="theme1 round border1 downloadOption">
+<div>
+<div class="round thumbnail">
+<img src="https://cdn.wearedevs.net/images/thumbnails/cs.jpeg" alt="Memory Edit Class" title="Memory Edit Class">
+<h2 class="downloadTitle">Memory Edit Class</h2>
+</div>
+<p class="description">This is what I use for the basic memory editing.</p>
+</div>
+<div class="round download_metadata">
+<p>51.2k+ downloads</p>
+<a class="round release-card-button" href="/d/Memory Edit Class" title="Download Memory Edit Class"><p>Download</p></a>
+</div>
+</div>
+</center>
+</div>
+</main>
+<style>
+footer{
+	box-shadow: 0 0px 5px -3px #202225;
+	margin-top: 50px;
+	padding: 10px 50px;
+	color: gray;
+	text-align: center;
+}
+
+.footerlinks{
+	display: inline-flex;
+	padding: 0;
+}
+
+.footerlinks li{
+	list-style-type: none;
+	margin-left: 12px;
+}
+
+.footerlinks li:first-of-type{
+	margin: 0;
+}
+
+/* Slider */
+.switch{
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 25px;
+}
+
+.slider:before{
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .3s;
+  transition: .3s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider:before{
+  margin-left: 22px;
+}
+
+.switch input:checked + .slider{
+    background-color: #2ecc71;
+}
+</style>
+<footer class="theme2">
+<ul class="footerlinks">
+<li><a href="https://blog.wearedevs.net/" title="WeAreDevs Blog">Blog</a></li>
+<li><a href="https://pastebin.com/raw/TGz5N9Xa" title="Change Log">Change Log</a></li>
+<li><a href="/guidelines" title="Privacy Policy">Guidelines</a></li>
+<li><a href="/terms-of-service" title="Privacy Policy">Terms of Use</a></li>
+<li><a href="/privacy" title="Privacy Policy">Privacy</a></li>
+</ul>
+<br />
+<br />
+<p>© 2021 WeAreDevs</p>
+<br />
+<div>
+<span>Night/Bright</span>
+<label class="switch">
+<input id="themer" class="visible" type="checkbox" checked>
+<span class="slider round"></span>
+</label>
+</div>
+</footer>
+<script>
+	if(getCookie("wrdtheme") === "night") {
+		document.getElementById('themer').checked = false
+	}
+
+	document.getElementById('themer').onclick = function () { 
+		if(document.getElementById('themer').checked){
+			setCookie("wrdtheme", "bright", 20*365)
+			document.getElementById('themecss').href = '/css/themes/bright.css';
+		} else {
+			setCookie("wrdtheme", "night", 20*365)
+			document.getElementById('themecss').href = '/css/themes/night.css';
+		}
+	};
+</script>
+<script>
+			// Push notifications setup
+			
+			var registration = null
+			
+			function urlBase64ToUint8Array(base64String) {
+			  const padding = '='.repeat((4 - base64String.length % 4) % 4);
+			  const base64 = (base64String + padding)
+				.replace(/\-/g, '+')
+				.replace(/_/g, '/')
+			  ;
+			  const rawData = window.atob(base64);
+			  return Uint8Array.from([...rawData].map((char) => char.charCodeAt(0)));
+			}
+			
+			function askPermission() {
+			  return new Promise(function(resolve, reject) {
+				const permissionResult = Notification.requestPermission(function(result) {
+				  resolve(result);
+				});
+
+				if (permissionResult) {
+				  permissionResult.then(resolve, reject);
+				}
+			  })
+			  .then(async function(permissionResult) {
+				if (permissionResult === 'granted') {
+					//Notifications are enabled
+					//Create subscription
+					const subscribeOptions = {
+					  userVisibleOnly: true,
+					  applicationServerKey: urlBase64ToUint8Array(
+						'BGyra8TIIln-swj30Hi4ZulNFcTe_EcmhqhIs0W1gMQv6ufiEorqnE-KvcgIO6kIfia6Jq0XYdHGv10jUdhiEko'
+					  )
+					};
+
+					let pushSubscription = await registration.pushManager.subscribe(subscribeOptions);
+
+					fetch('https://api.wearedevs.net/v1/notifications/subscribe', {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json"
+						},
+						credentials: 'include',
+						body: JSON.stringify(pushSubscription)
+					})
+					.then(res => res.json())
+					.then(res => {
+						if(!res.success) {
+							if(res.reason) alert("Error: " + res.reason)
+							else alert("An unexpected error occured...")
+						}
+					})
+					.catch(()=>alert("Failed to contact the server or an unexpected response was received..."))
+				}
+				else {
+				  throw new Error('We weren\'t granted permission.');
+				}
+			  });
+			}
+			
+			if ('serviceWorker' in navigator) { 
+				//Service worker is supported on this browser
+				
+				//Register the service worker
+				navigator.serviceWorker.register('/js/service-worker.js')
+				.then(function(_registration) {
+					console.log('Service worker successfully registered.');
+					
+					registration = _registration
+					
+					if ('PushManager' in window) { 
+						//Push manager is supported on this browser(Used for push notifications)
+						if (Notification.permission !== "granted") {
+							askPermission();
+						} //else push notifications are already enabled
+					}
+				})
+				.catch(function(err) {
+					console.error('Unable to register service worker.', err);
+				});
+			}
+		</script>
+</body>
+</html>
